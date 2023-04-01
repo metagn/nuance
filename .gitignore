@@ -1,0 +1,5 @@
+*.exe
+*.dll
+*.js
+*.tmp
+*_generated.nim
