@@ -2,7 +2,7 @@
 
 version       = "0.1.0"
 author        = "metagn"
-description   = "nim untyped AST node generation with custom line info at runtime"
+description   = "nim untyped AST node generation at runtime with custom line info"
 license       = "MIT"
 srcDir        = "src"
 
