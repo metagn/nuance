@@ -5,7 +5,7 @@ const
   intValNodeKinds* = {nnkCharLit..nnkInt64Lit}
   uintValNodeKinds* = {nnkUIntLit..nnkUInt64Lit}
   floatValNodeKinds* = {nnkFloatLit..nnkFloat128Lit}
-  strValNodeKinds* = {nnkStrLit..nnkTripleStrLit, nnkIdent, nnkSym} # nnkSym actually not usable 
+  strValNodeKinds* = {nnkStrLit..nnkTripleStrLit, nnkCommentStmt, nnkIdent, nnkSym} # nnkSym actually not usable 
 
 type
   UntypedNodeKind* = NimNodeKind
