@@ -12,6 +12,8 @@ An example pipeline is:
 3. The generated Nim file has code that deserializes this AST and converts it into Nim AST at compile time and immediately loads it using a macro
 4. This file is compiled by Nim with compiler messages and stack traces all referring to the given custom line/file info
 
+[lispnim](https://github.com/metagn/lispnim) is a demonstration of the above pipeline as a rudimentary Lisp dialect of Nim that can be used as the source code of an installable Nimble package.
+
 The reasons this library is needed in these steps are:
 
 - The `NimNode` type provided by Nim used to represent AST nodes is only available at compile time, this library provides a version that is available at runtime for runtime AST generation
@@ -25,12 +27,10 @@ This library is tested on the C, JavaScript and NimScript (compile-time VM) back
 
 The name of the library fits in a lot of ways but for the sake of being memorable a mnemonic might be "Nim untyped AST no compiler edit/compiletime execution". This is slightly misleading but you can just read above for what it actually does.
 
-This is a very early version of this library and there are many things to even get started on:
+To do:
 
 - [ ] Docs
 - [ ] Good names and more thought out modularization
-- [ ] Real use case example
 - [ ] Binary serialization option
-- [ ] See if Nim errors/stack traces are actually informative
-
-For now see the tests for example uses (running them generates some files which might give more of an idea).
+- [x] Real use case example (lispnim)
+- [x] See if Nim errors/stack traces are actually informative (tested in lispnim)
