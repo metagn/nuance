@@ -12,7 +12,7 @@ An example pipeline is:
 3. The generated Nim file has code that deserializes this AST and converts it into Nim AST at compile time and immediately loads it using a macro
 4. This file is compiled by Nim with compiler messages and stack traces all referring to the given custom line/file info
 
-[lispnim](https://github.com/metagn/lispnim) is a demonstration of the above pipeline as a rudimentary Lisp dialect of Nim that can be used as the source code of an installable Nimble package.
+[**lispnim**](https://github.com/metagn/lispnim) is a demonstration of the above pipeline as a rudimentary Lisp dialect of Nim that can be used as the source code of an installable Nimble package.
 
 The reasons this library is needed in these steps are:
 
