@@ -23,7 +23,7 @@ jobs:
         run: nimble install -y
 
       - name: run tests
-        run: nim r tests/run_tests.nim
+        run: nim r tasks/run_tests.nim
   test-devel:
     runs-on: ubuntu-latest
 
@@ -40,7 +40,7 @@ jobs:
         run: nimble install -y
 
       - name: run tests
-        run: nim r tests/run_tests.nim
+        run: nim r tasks/run_tests.nim
   
   docs:
     runs-on: ubuntu-latest
