@@ -11,18 +11,8 @@ srcDir        = "src"
 
 requires "nim >= 1.6.12"
 
-when (compiles do: import nimbleutils):
-  import nimbleutils
-
 task docs, "build docs for all modules":
-  when declared(buildDocs):
-    buildDocs(gitUrl = "https://github.com/metagn/nuance")
-  else:
-    echo "docs task not implemented, need nimbleutils"
+  exec "nim r tasks/build_docs.nim"
 
 task tests, "run tests for multiple backends":
-  when declared(runTests):
-    runTests(backends = {c, js, nims})
-    runTests("tests/generated", backends = {c, js, nims})
-  else:
-    echo "tests task not implemented, need nimbleutils"
+  exec "nim r tasks/run_tests.nim"

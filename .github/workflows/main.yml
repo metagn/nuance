@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: jiro4989/setup-nim-action@v1
+      - uses: actions/checkout@v4
+      - uses: jiro4989/setup-nim-action@v2
 
       - name: install nimbleutils
         run: nimble install -y https://github.com/metagn/nimbleutils@#HEAD
@@ -23,14 +23,31 @@ jobs:
         run: nimble install -y
 
       - name: run tests
-        run: nimble tests
+        run: nim r tests/run_tests.nim
+  test-devel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jiro4989/setup-nim-action@v2
+        with:
+          nim-version: devel
+
+      - name: install nimbleutils
+        run: nimble install -y https://github.com/metagn/nimbleutils@#HEAD
+      
+      - name: install dependencies
+        run: nimble install -y
+
+      - name: run tests
+        run: nim r tests/run_tests.nim
   
   docs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: jiro4989/setup-nim-action@v1
+      - uses: actions/checkout@v4
+      - uses: jiro4989/setup-nim-action@v2
 
       - name: install nimbleutils
         run: nimble install -y https://github.com/metagn/nimbleutils@#HEAD
@@ -39,7 +56,7 @@ jobs:
         run: nimble install -y
       
       - name: compile docs
-        run: nimble docs
+        run: nim r tasks/build_docs.nim
       
       - name: move to subfolder
         run: |
