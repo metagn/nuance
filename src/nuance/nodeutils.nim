@@ -1,6 +1,6 @@
 import node
 
-proc `==`*(a, b: UntypedNode): bool =
+proc `==`*(a, b: UntypedNode): bool {.noSideEffect.} =
   if a.kind != b.kind: return false
   if a.info != b.info: return false
   case a.kind
